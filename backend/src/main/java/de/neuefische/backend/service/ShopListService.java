@@ -6,6 +6,7 @@ import de.neuefische.backend.repo.ShopListRepo;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ShopListService {
@@ -19,5 +20,12 @@ public class ShopListService {
 
     public List<ShopList> getAll() {
         return shopListRepo.findAll();
+    }
+
+    public Optional<ShopList> saveNewList(String listName) {
+        if (shopListRepo.findById(listName).isEmpty()){
+             return Optional.of(shopListRepo.save(ShopList.builder().listName(listName).build()));
+        }
+        return Optional.empty();
     }
 }

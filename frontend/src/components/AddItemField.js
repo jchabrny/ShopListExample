@@ -1,6 +1,6 @@
 import styled from "styled-components/macro";
 
-export default function AddField({amount,setAmount,item,setItem}){
+export default function AddItemField({amount,setAmount,item,setItem}){
     return(
         <Wrapper>
             <div className="addField_input">

@@ -1,22 +1,15 @@
-package de.neuefische.backend.model;
+package de.neuefische.backend.api;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
-
-import java.util.HashMap;
 
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class ShopList {
-
-    @Id
+public class DtoListname {
     String listName;
-
-    HashMap<String,ListItem> listItems;
-
 }

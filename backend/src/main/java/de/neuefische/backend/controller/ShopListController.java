@@ -1,14 +1,18 @@
 package de.neuefische.backend.controller;
 
 
+import de.neuefische.backend.api.DtoListname;
 import de.neuefische.backend.model.ListItem;
 import de.neuefische.backend.model.ShopList;
 import de.neuefische.backend.service.ShopListService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
+import java.net.http.HttpResponse;
 import java.util.List;
+import java.util.Optional;
+
+import static org.springframework.http.ResponseEntity.ok;
 
 @RestController
 @RequestMapping("/lists")
@@ -21,7 +25,16 @@ public class ShopListController {
     }
 
     @GetMapping()
-    public List<ShopList> getAllLists(){
-        return shopListService.getAll();
+    public ResponseEntity<List<ShopList>> getAllLists(){
+        return ok(shopListService.getAll());
+    }
+
+    @PostMapping()
+    public ResponseEntity<ShopList> postNewList(@RequestBody DtoListname listName){
+        Optional<ShopList> optionalShopList = shopListService.saveNewList(listName.getListName());
+        if (optionalShopList.isEmpty()){
+            return ResponseEntity.badRequest().build();
+        }
+        return ok(optionalShopList.get());
     }
 }

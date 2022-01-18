@@ -1,5 +1,5 @@
 import Header from "../components/Header";
-import AddField from "../components/AddField";
+import AddItemField from "../components/AddItemField";
 import ItemGallery from "../components/ItemGallery";
 import BottomNav from "../components/BottomNav";
 import styled from "styled-components/macro";
@@ -14,7 +14,7 @@ export default function ListPage(){
         <Wrapper>
             <Header/>
             <ItemGallery/>
-            <AddField item={item} setItem={setItem} amount={amount} setAmount={setAmount} />
+            <AddItemField item={item} setItem={setItem} amount={amount} setAmount={setAmount} />
             <BottomNav/>
         </Wrapper>
     )
