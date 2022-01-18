@@ -7,8 +7,8 @@ export default function App() {
   return (
     <BrowserRouter>
         <Routes>
-            <Route path="*" element={<MainPage/>}/>
-            <Route path="/lists" element={<ListPage/>}/>
+            <Route path="/" element={<MainPage/>}/>
+            <Route path="/:whichList" element={<ListPage/>}/>
         </Routes>
     </BrowserRouter>
   );

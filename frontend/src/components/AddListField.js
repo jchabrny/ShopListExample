@@ -8,7 +8,6 @@ export default function AddListField(){
     const handleChange = event => {
         event.preventDefault()
         setInput(event.target.value)
-        console.log(input)
     }
 
     const handleSubmit = event => {

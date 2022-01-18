@@ -28,4 +28,8 @@ public class ShopListService {
         }
         return Optional.empty();
     }
+
+    public Optional<ShopList> findByName(String whichList) {
+        return shopListRepo.findById(whichList);
+    }
 }

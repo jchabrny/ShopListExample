@@ -5,3 +5,6 @@ export const getAllLists = () =>
 
 export const saveNewList = listName =>
     axios.post("/lists",listName).then(response => response.data)
+
+export const getListByName = (listName) =>
+    axios.get(`/${listName}`).then(response => response.data)

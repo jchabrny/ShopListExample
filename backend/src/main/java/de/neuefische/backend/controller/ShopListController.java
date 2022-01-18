@@ -37,4 +37,9 @@ public class ShopListController {
         }
         return ok(optionalShopList.get());
     }
+
+    @GetMapping("/{whichList}")
+    public ResponseEntity<ShopList> getListByName (@RequestParam String whichList){
+        Optional<ShopList> optionalShopList = shopListService.findByName(whichList);
+    }
 }
