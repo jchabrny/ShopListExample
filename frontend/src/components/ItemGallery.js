@@ -1,9 +1,9 @@
 import ItemCard from "./ItemCard";
-import "./ItemGallery.css"
+import styled from "styled-components/macro";
 
-export default function ItemGallery(props){
+export default function ItemGallery(){
     return(
-        <div className="itemGallery">
+        <Wrapper>
             <ItemCard/>
             <ItemCard/>
             <ItemCard/>
@@ -18,6 +18,15 @@ export default function ItemGallery(props){
             <ItemCard/>
             <ItemCard/>
             <ItemCard/>
-        </div>
+        </Wrapper>
     )
 }
+
+const Wrapper = styled.div`
+        display: grid;
+        gap: 5px;
+        height: 100%;
+        width: 89%;
+        overflow-y: scroll;
+        margin: 0 5%;
+`

@@ -1,8 +1,8 @@
-import "./ItemCounter.css"
+import styled from "styled-components/macro";
 
-export default function ItemCounter(props){
+export default function ItemCounter(){
     return(
-        <div className="itemCounter">
+        <Wrapper>
             <div className="itemCounter_show">
                 <p>2</p>
             </div>
@@ -11,6 +11,14 @@ export default function ItemCounter(props){
                 <button>-</button>
             </div>
 
-        </div>
+        </Wrapper>
     )
 }
+
+const Wrapper = styled.div`
+    margin: 0;
+  
+  .itemCounter_show{
+    height: min-content;
+  }
+`

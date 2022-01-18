@@ -1,9 +1,14 @@
-import "./BottomNav.css"
+import styled from "styled-components/macro";
 
-export default function BottomNav(props){
+export default function BottomNav(){
     return(
-        <div className="bottomNav">
+        <Wrapper>
             <p>HOME</p>
-        </div>
+        </Wrapper>
     )
 }
+
+const Wrapper = styled.div`
+  background-color: dimgrey;
+  margin: 0;
+`

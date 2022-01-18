@@ -1,8 +1,0 @@
-.itemGallery{
-    display: grid;
-    gap: 5px;
-    height: 100%;
-    width: 89%;
-    overflow-y: scroll;
-    margin: 0 5%;
-}
