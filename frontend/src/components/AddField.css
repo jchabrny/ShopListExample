@@ -1,0 +1,17 @@
+.addField{
+    display: grid;
+    grid-template-rows: min-content min-content min-content;
+    margin:0  0.5rem;
+}
+
+.addField_input{
+    display: grid;
+    gap: 5px;
+    margin: 0 0 5px 0;
+}
+
+.addField_btn{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5px;
+}
