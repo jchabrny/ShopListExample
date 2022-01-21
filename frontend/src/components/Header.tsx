@@ -1,7 +1,12 @@
-export default function Header(){
+
+interface HeaderProps {
+    title: string
+}
+
+export default function Header({title}: HeaderProps){
     return(
         <div className="header">
-            <h1>Einkaufsliste</h1>
+            <h1>{title}</h1>
         </div>
     )
 }

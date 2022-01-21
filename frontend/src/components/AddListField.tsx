@@ -1,10 +1,12 @@
 import styled from "styled-components/macro";
-import {ChangeEvent, FormEvent, useState} from "react";
+import {ChangeEvent, FormEvent, useContext, useState} from "react";
 import {saveNewList} from "../service/apiService";
 import {NewListDto} from "../model/NewListDto";
+import {AuthContext} from "../context/AuthContext";
 
 export default function AddListField(){
     const [input,setInput] = useState<string>("")
+    const {token} = useContext(AuthContext)
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         setInput(event.target.value)
@@ -15,7 +17,7 @@ export default function AddListField(){
         const newListDto: NewListDto = {
             listName:input
         }
-        saveNewList(newListDto).catch(e => console.log(e.message))
+        saveNewList(newListDto, token).catch(e => console.log(e.message))
         setInput("")
     }
 
