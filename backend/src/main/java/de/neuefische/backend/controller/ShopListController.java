@@ -11,7 +11,7 @@ import java.util.NoSuchElementException;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/lists")
+@RequestMapping("/api/lists")
 public class ShopListController {
 
     private final ShopListService shopListService;
