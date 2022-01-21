@@ -3,6 +3,7 @@ package de.neuefische.backend.security.service;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.time.Duration;
@@ -13,7 +14,8 @@ import java.util.Map;
 @Service
 public class JWTUtils {
 
-  final String secret = "this is a bad secret";
+  @Value("${jwt.secret:}")
+  private String secret;
 
   public String createToken(Map<String, Object> claims, String subject) {
     return Jwts.builder()
