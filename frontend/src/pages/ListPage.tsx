@@ -10,9 +10,9 @@ import {getListByName} from "../service/apiService";
 export default function ListPage(){
     let params = useParams()
 
-    const [list, setList] = useState()
-    const [item,setItem] = useState("")
-    const [amount ,setAmount] = useState(0)
+    const [list, setList] = useState<string[]>()
+    const [item,setItem] = useState<string>("")
+    const [amount ,setAmount] = useState<number>(0)
 
 
     useEffect( () => {

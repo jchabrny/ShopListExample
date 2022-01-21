@@ -1,7 +1,11 @@
 import styled from "styled-components/macro";
 import { useNavigate } from "react-router-dom";
 
-export default function ListCard({listName}){
+interface ListCardProps {
+    listName: string
+}
+
+export default function ListCard({listName}: ListCardProps){
     let navigate = useNavigate();
     const showList = () => {
         navigate(`/${listName}`)
