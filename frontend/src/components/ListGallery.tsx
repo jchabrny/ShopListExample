@@ -1,7 +1,12 @@
 import styled from "styled-components/macro";
 import ListCard from "./ListCard";
+import {List} from "../model/List";
 
-export default function ListGallery({lists}){
+interface ListGalleryProps {
+    lists: List[]
+}
+
+export default function ListGallery({lists}: ListGalleryProps){
     return(
         <Wrapper>
             {lists.map(list => (

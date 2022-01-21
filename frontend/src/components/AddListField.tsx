@@ -1,21 +1,21 @@
 import styled from "styled-components/macro";
-import {useState} from "react";
+import {ChangeEvent, FormEvent, useState} from "react";
 import {saveNewList} from "../service/apiService";
+import {NewListDto} from "../model/NewListDto";
 
 export default function AddListField(){
-    const [input,setInput] = useState("")
+    const [input,setInput] = useState<string>("")
 
-    const handleChange = event => {
-        event.preventDefault()
+    const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         setInput(event.target.value)
     }
 
-    const handleSubmit = event => {
+    const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault()
-        const name = {
+        const newListDto: NewListDto = {
             listName:input
         }
-        saveNewList(name).catch(e => console.log(e.message))
+        saveNewList(newListDto).catch(e => console.log(e.message))
         setInput("")
     }
 
